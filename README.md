@@ -1,29 +1,9 @@
 # Vue layout
 
-## Project setup
+1. npm i
 
-```
-npm install
-```
+2. Thêm tên service trong package.json
 
-### Compiles and hot-reloads for development
+3. Thêm port tương ứng trong file /public/port
 
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+4. Sửa các đường dẫn nếu cần thiết: Rules
