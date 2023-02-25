@@ -1,8 +1,8 @@
 # Vue layout
 
-1. npm i
+1. Đổi tên service trong package.json
 
-2. Thêm tên service trong package.json
+2. npm i
 
 3. Thêm port tương ứng trong file /public/port
 

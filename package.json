@@ -1,5 +1,5 @@
 {
-    "name": "@smit/project-name",
+    "name": "@smit/payment",
     "version": "0.1.0",
     "private": true,
     "scripts": {
