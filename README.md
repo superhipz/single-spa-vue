@@ -7,3 +7,4 @@
 3. Thêm port tương ứng trong file /public/port
 
 4. Sửa các đường dẫn nếu cần thiết: Rules
+# client-adscheck-payment
