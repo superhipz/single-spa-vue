@@ -1,0 +1,431 @@
+{
+    "v": "5.9.0",
+    "fr": 29.9700012207031,
+    "ip": 0,
+    "op": 145.000005905971,
+    "w": 1624,
+    "h": 1224,
+    "nm": "Animation-Payment",
+    "ddd": 0,
+    "assets": [
+        { "id": "image_0", "w": 192, "h": 156, "u": "/payment/img/bill_animation/", "p": "img_0.png", "e": 0 },
+        { "id": "image_1", "w": 106, "h": 106, "u": "/payment/img/bill_animation/", "p": "img_1.png", "e": 0 },
+        { "id": "image_2", "w": 103, "h": 103, "u": "/payment/img/bill_animation/", "p": "img_2.png", "e": 0 },
+        { "id": "image_3", "w": 149, "h": 142, "u": "/payment/img/bill_animation/", "p": "img_3.png", "e": 0 },
+        { "id": "image_4", "w": 187, "h": 161, "u": "/payment/img/bill_animation/", "p": "img_4.png", "e": 0 },
+        { "id": "image_5", "w": 194, "h": 367, "u": "/payment/img/bill_animation/", "p": "img_5.png", "e": 0 },
+        { "id": "image_6", "w": 325, "h": 418, "u": "/payment/img/bill_animation/", "p": "img_6.png", "e": 0 },
+        { "id": "image_7", "w": 85, "h": 72, "u": "/payment/img/bill_animation/", "p": "img_7.png", "e": 0 },
+        { "id": "image_8", "w": 677, "h": 687, "u": "/payment/img/bill_animation/", "p": "img_8.png", "e": 0 },
+        { "id": "image_9", "w": 279, "h": 463, "u": "/payment/img/bill_animation/", "p": "img_9.png", "e": 0 },
+        { "id": "image_10", "w": 115, "h": 124, "u": "/payment/img/bill_animation/", "p": "img_10.png", "e": 0 }
+    ],
+    "layers": [
+        {
+            "ddd": 0,
+            "ind": 1,
+            "ty": 2,
+            "nm": "Layer 3",
+            "refId": "image_0",
+            "sr": 1,
+            "ks": {
+                "o": { "a": 0, "k": 100, "ix": 11 },
+                "r": { "a": 0, "k": 0, "ix": 10 },
+                "p": { "a": 0, "k": [830.251, 495.904, 0], "ix": 2, "l": 2 },
+                "a": { "a": 0, "k": [-142.457, 441.736, 0], "ix": 1, "l": 2 },
+                "s": {
+                    "a": 0,
+                    "k": [100, 100, 100],
+                    "ix": 6,
+                    "l": 2,
+                    "x": "var $bm_rt;\nvar result;\nresult = getAnimationComposerPresetValue();\nfunction getAnimationComposerPresetValue() {\n    var bL = thisLayer;\n    var tTrI = null;\n    var tTrO = null;\n    if (bL.marker.numKeys > 0) {\n        var acmp = 'zzzzzzzzzzzzzzz_AC';\n        for (var i = 1; i <= bL.marker.numKeys; i++) {\n            var m = bL.marker.key(i);\n            var p = m.parameters;\n            if (p.hasOwnProperty(acmp + 'MarkerEnabled') && p.hasOwnProperty(acmp + 'MarkerType') && p.hasOwnProperty(acmp + 'MarkerAppPresetType')) {\n                if (p[acmp + 'MarkerEnabled'] != '1') {\n                    continue;\n                }\n                switch (p[acmp + 'MarkerAppPresetType']) {\n                case '1': {\n                        tTrI = m.time;\n                        break;\n                    }\n                case '2': {\n                        tTrO = m.time;\n                        break;\n                    }\n                }\n            }\n        }\n    }\n    ;\n    function acPD(fxN) {\n        try {\n            if (bL.effect(fxN).active === false) {\n                ac.en = false;\n            }\n        } catch (e) {\n        }\n    }\n    function acSliderValP(fxN, stN, dV) {\n        try {\n            return bL.effect(fxN)(stN);\n        } catch (e) {\n            return dV;\n        }\n    }\n    function acValMul(val) {\n        acAccM *= val;\n    }\n    function mhOvershoot(t, a, f, d) {\n        if (d <= 0) {\n            d = 0;\n        }\n        var y = $bm_div($bm_mul(a, Math.cos($bm_mul($bm_mul($bm_mul(t, f), Math.PI), 2))), Math.exp($bm_mul(t, d)));\n        if (t < 0.8) {\n            return y;\n        }\n        return $bm_mul(y, $bm_sub(1, $bm_div($bm_sub(t, 0.8), 0.2)));\n    }\n    function upACo(tIn, dIn, tOut, dOut, eFi, eFo) {\n        if (dIn < 0) {\n            dIn = 0;\n        }\n        if (dOut < 0) {\n            dOut = 0;\n        }\n        ac.fade = 1;\n        if (t < tOut) {\n            if (t < $bm_sum(tIn, dIn)) {\n                if (dIn == 0) {\n                    ac.fade = 0;\n                } else {\n                    ac.fade = $bm_div($bm_sub(t, tIn), dIn);\n                    if (ac.fade < 0) {\n                        ac.fade = 0;\n                    }\n                    if (ac.fade > 1) {\n                        ac.fade = 1;\n                    }\n                    if (eFi) {\n                        ac.fade = eFi(ac.fade);\n                    }\n                }\n            }\n        } else {\n            if (dOut == 0) {\n                ac.fade = 0;\n            } else {\n                ac.fade = $bm_div($bm_sub(t, tOut), dOut);\n                if (ac.fade < 0) {\n                    ac.fade = 0;\n                }\n                if (ac.fade > 1) {\n                    ac.fade = 1;\n                }\n                if (eFo) {\n                    ac.fade = eFo(ac.fade);\n                }\n                ac.fade = $bm_sub(1, ac.fade);\n            }\n        }\n        ac.intensity = 1;\n        ac.en = true;\n        ac.t = $bm_sub(t, tIn);\n    }\n    var ac = {};\n    ac.en = false;\n    var v = thisProperty.value;\n    var t = time;\n    var acAccM = 1;\n    ac.en = false;\n    if (tTrI !== null && t < tTrI) {\n        upACo(bL.inPoint, $bm_sub(tTrI, bL.inPoint), bL.outPoint, 0);\n        ac.fade = $bm_sub(1, ac.fade);\n    }\n    acPD('AC IN [YRH] Controls');\n    if (ac.en) {\n        acValMul($bm_sub(1, $bm_mul(mhOvershoot($bm_sub(1, ac.fade), 1, acSliderValP('AC IN [YRH] Controls', 'Number of bounces', 2), 7), $bm_sum($bm_div(acSliderValP('AC IN [YRH] Controls', 'Scale', 0), -100), 1))));\n    }\n    ac.en = false;\n    if (tTrO !== null && t >= tTrO) {\n        upACo(0, 0, tTrO, $bm_sub($bm_sub(bL.outPoint, tTrO), thisComp.frameDuration));\n        ac.fade = $bm_sub(1, ac.fade);\n    }\n    acPD('AC OUT [YRH] 2 Controls');\n    if (ac.en) {\n        acValMul($bm_sub(1, $bm_mul(mhOvershoot($bm_sub(1, ac.fade), 1, acSliderValP('AC OUT [YRH] 2 Controls', 'Number of bounces', 2), 7), $bm_sum($bm_div(acSliderValP('AC OUT [YRH] 2 Controls', 'Scale', 0), -100), 1))));\n    }\n    v = thisProperty.value;\n    v *= acAccM;\n    return v;\n}\n$bm_rt = result;"
+                }
+            },
+            "ao": 0,
+            "ef": [
+                {
+                    "ty": 5,
+                    "nm": "AC IN [YRH] Controls",
+                    "np": 4,
+                    "mn": "Pseudo/MHAC PrCtrl YRH 4",
+                    "ix": 1,
+                    "en": 1,
+                    "ef": [
+                        { "ty": 0, "nm": "Number of bounces", "mn": "Pseudo/MHAC PrCtrl YRH 4-0001", "ix": 1, "v": { "a": 0, "k": 2, "ix": 1 } },
+                        { "ty": 0, "nm": "Scale", "mn": "Pseudo/MHAC PrCtrl YRH 4-0002", "ix": 2, "v": { "a": 0, "k": 0, "ix": 2 } }
+                    ]
+                },
+                {
+                    "ty": 5,
+                    "nm": "AC OUT [YRH] 2 Controls",
+                    "np": 4,
+                    "mn": "Pseudo/MHAC PrCtrl YRH 4",
+                    "ix": 2,
+                    "en": 1,
+                    "ef": [
+                        { "ty": 0, "nm": "Number of bounces", "mn": "Pseudo/MHAC PrCtrl YRH 4-0001", "ix": 1, "v": { "a": 0, "k": 0, "ix": 1 } },
+                        { "ty": 0, "nm": "Scale", "mn": "Pseudo/MHAC PrCtrl YRH 4-0002", "ix": 2, "v": { "a": 0, "k": 0, "ix": 2 } }
+                    ]
+                }
+            ],
+            "ip": 13.0000005295009,
+            "op": 104.000004236007,
+            "st": 13.0000005295009,
+            "bm": 0
+        },
+        {
+            "ddd": 0,
+            "ind": 2,
+            "ty": 2,
+            "nm": "Layer 14",
+            "refId": "image_1",
+            "sr": 1,
+            "ks": {
+                "o": { "a": 0, "k": 100, "ix": 11 },
+                "r": { "a": 0, "k": 0, "ix": 10 },
+                "p": { "a": 0, "k": [830.664, 496.442, 0], "ix": 2, "l": 2 },
+                "a": { "a": 0, "k": [506.701, 316.701, 0], "ix": 1, "l": 2 },
+                "s": {
+                    "a": 0,
+                    "k": [100, 100, 100],
+                    "ix": 6,
+                    "l": 2,
+                    "x": "var $bm_rt;\nvar result;\nresult = getAnimationComposerPresetValue();\nfunction getAnimationComposerPresetValue() {\n    var bL = thisLayer;\n    var tTrI = null;\n    var tTrO = null;\n    if (bL.marker.numKeys > 0) {\n        var acmp = 'zzzzzzzzzzzzzzz_AC';\n        for (var i = 1; i <= bL.marker.numKeys; i++) {\n            var m = bL.marker.key(i);\n            var p = m.parameters;\n            if (p.hasOwnProperty(acmp + 'MarkerEnabled') && p.hasOwnProperty(acmp + 'MarkerType') && p.hasOwnProperty(acmp + 'MarkerAppPresetType')) {\n                if (p[acmp + 'MarkerEnabled'] != '1') {\n                    continue;\n                }\n                switch (p[acmp + 'MarkerAppPresetType']) {\n                case '1': {\n                        tTrI = m.time;\n                        break;\n                    }\n                case '2': {\n                        tTrO = m.time;\n                        break;\n                    }\n                }\n            }\n        }\n    }\n    ;\n    function acPD(fxN) {\n        try {\n            if (bL.effect(fxN).active === false) {\n                ac.en = false;\n            }\n        } catch (e) {\n        }\n    }\n    function acSliderValP(fxN, stN, dV) {\n        try {\n            return bL.effect(fxN)(stN);\n        } catch (e) {\n            return dV;\n        }\n    }\n    function acValMul(val) {\n        acAccM *= val;\n    }\n    function mhOvershoot(t, a, f, d) {\n        if (d <= 0) {\n            d = 0;\n        }\n        var y = $bm_div($bm_mul(a, Math.cos($bm_mul($bm_mul($bm_mul(t, f), Math.PI), 2))), Math.exp($bm_mul(t, d)));\n        if (t < 0.8) {\n            return y;\n        }\n        return $bm_mul(y, $bm_sub(1, $bm_div($bm_sub(t, 0.8), 0.2)));\n    }\n    function upACo(tIn, dIn, tOut, dOut, eFi, eFo) {\n        if (dIn < 0) {\n            dIn = 0;\n        }\n        if (dOut < 0) {\n            dOut = 0;\n        }\n        ac.fade = 1;\n        if (t < tOut) {\n            if (t < $bm_sum(tIn, dIn)) {\n                if (dIn == 0) {\n                    ac.fade = 0;\n                } else {\n                    ac.fade = $bm_div($bm_sub(t, tIn), dIn);\n                    if (ac.fade < 0) {\n                        ac.fade = 0;\n                    }\n                    if (ac.fade > 1) {\n                        ac.fade = 1;\n                    }\n                    if (eFi) {\n                        ac.fade = eFi(ac.fade);\n                    }\n                }\n            }\n        } else {\n            if (dOut == 0) {\n                ac.fade = 0;\n            } else {\n                ac.fade = $bm_div($bm_sub(t, tOut), dOut);\n                if (ac.fade < 0) {\n                    ac.fade = 0;\n                }\n                if (ac.fade > 1) {\n                    ac.fade = 1;\n                }\n                if (eFo) {\n                    ac.fade = eFo(ac.fade);\n                }\n                ac.fade = $bm_sub(1, ac.fade);\n            }\n        }\n        ac.intensity = 1;\n        ac.en = true;\n        ac.t = $bm_sub(t, tIn);\n    }\n    var ac = {};\n    ac.en = false;\n    var v = thisProperty.value;\n    var t = time;\n    var acAccM = 1;\n    ac.en = false;\n    if (tTrI !== null && t < tTrI) {\n        upACo(bL.inPoint, $bm_sub(tTrI, bL.inPoint), bL.outPoint, 0);\n        ac.fade = $bm_sub(1, ac.fade);\n    }\n    acPD('AC IN [YRH] Controls');\n    if (ac.en) {\n        acValMul($bm_sub(1, $bm_mul(mhOvershoot($bm_sub(1, ac.fade), 1, acSliderValP('AC IN [YRH] Controls', 'Number of bounces', 2), 7), $bm_sum($bm_div(acSliderValP('AC IN [YRH] Controls', 'Scale', 0), -100), 1))));\n    }\n    ac.en = false;\n    if (tTrO !== null && t >= tTrO) {\n        upACo(0, 0, tTrO, $bm_sub($bm_sub(bL.outPoint, tTrO), thisComp.frameDuration));\n        ac.fade = $bm_sub(1, ac.fade);\n    }\n    acPD('AC OUT [YRH] 2 Controls');\n    if (ac.en) {\n        acValMul($bm_sub(1, $bm_mul(mhOvershoot($bm_sub(1, ac.fade), 1, acSliderValP('AC OUT [YRH] 2 Controls', 'Number of bounces', 2), 7), $bm_sum($bm_div(acSliderValP('AC OUT [YRH] 2 Controls', 'Scale', 0), -100), 1))));\n    }\n    v = thisProperty.value;\n    v *= acAccM;\n    return v;\n}\n$bm_rt = result;"
+                }
+            },
+            "ao": 0,
+            "ef": [
+                {
+                    "ty": 5,
+                    "nm": "AC IN [YRH] Controls",
+                    "np": 4,
+                    "mn": "Pseudo/MHAC PrCtrl YRH 4",
+                    "ix": 1,
+                    "en": 1,
+                    "ef": [
+                        { "ty": 0, "nm": "Number of bounces", "mn": "Pseudo/MHAC PrCtrl YRH 4-0001", "ix": 1, "v": { "a": 0, "k": 2, "ix": 1 } },
+                        { "ty": 0, "nm": "Scale", "mn": "Pseudo/MHAC PrCtrl YRH 4-0002", "ix": 2, "v": { "a": 0, "k": 0, "ix": 2 } }
+                    ]
+                },
+                {
+                    "ty": 5,
+                    "nm": "AC OUT [YRH] 2 Controls",
+                    "np": 4,
+                    "mn": "Pseudo/MHAC PrCtrl YRH 4",
+                    "ix": 2,
+                    "en": 1,
+                    "ef": [
+                        { "ty": 0, "nm": "Number of bounces", "mn": "Pseudo/MHAC PrCtrl YRH 4-0001", "ix": 1, "v": { "a": 0, "k": 0, "ix": 1 } },
+                        { "ty": 0, "nm": "Scale", "mn": "Pseudo/MHAC PrCtrl YRH 4-0002", "ix": 2, "v": { "a": 0, "k": 0, "ix": 2 } }
+                    ]
+                }
+            ],
+            "ip": 13.0000005295009,
+            "op": 104.000004236007,
+            "st": 13.0000005295009,
+            "bm": 0
+        },
+        {
+            "ddd": 0,
+            "ind": 3,
+            "ty": 2,
+            "nm": "Layer 4",
+            "refId": "image_2",
+            "sr": 1,
+            "ks": {
+                "o": { "a": 0, "k": 100, "ix": 11 },
+                "r": { "a": 0, "k": 0, "ix": 10 },
+                "p": { "a": 0, "k": [833.218, 497.536, 0], "ix": 2, "l": 2 },
+                "a": { "a": 0, "k": [-398.548, 57.452, 0], "ix": 1, "l": 2 },
+                "s": {
+                    "a": 0,
+                    "k": [100, 100, 100],
+                    "ix": 6,
+                    "l": 2,
+                    "x": "var $bm_rt;\nvar result;\nresult = getAnimationComposerPresetValue();\nfunction getAnimationComposerPresetValue() {\n    var bL = thisLayer;\n    var tTrI = null;\n    var tTrO = null;\n    if (bL.marker.numKeys > 0) {\n        var acmp = 'zzzzzzzzzzzzzzz_AC';\n        for (var i = 1; i <= bL.marker.numKeys; i++) {\n            var m = bL.marker.key(i);\n            var p = m.parameters;\n            if (p.hasOwnProperty(acmp + 'MarkerEnabled') && p.hasOwnProperty(acmp + 'MarkerType') && p.hasOwnProperty(acmp + 'MarkerAppPresetType')) {\n                if (p[acmp + 'MarkerEnabled'] != '1') {\n                    continue;\n                }\n                switch (p[acmp + 'MarkerAppPresetType']) {\n                case '1': {\n                        tTrI = m.time;\n                        break;\n                    }\n                case '2': {\n                        tTrO = m.time;\n                        break;\n                    }\n                }\n            }\n        }\n    }\n    ;\n    function acPD(fxN) {\n        try {\n            if (bL.effect(fxN).active === false) {\n                ac.en = false;\n            }\n        } catch (e) {\n        }\n    }\n    function acSliderValP(fxN, stN, dV) {\n        try {\n            return bL.effect(fxN)(stN);\n        } catch (e) {\n            return dV;\n        }\n    }\n    function acValMul(val) {\n        acAccM *= val;\n    }\n    function mhOvershoot(t, a, f, d) {\n        if (d <= 0) {\n            d = 0;\n        }\n        var y = $bm_div($bm_mul(a, Math.cos($bm_mul($bm_mul($bm_mul(t, f), Math.PI), 2))), Math.exp($bm_mul(t, d)));\n        if (t < 0.8) {\n            return y;\n        }\n        return $bm_mul(y, $bm_sub(1, $bm_div($bm_sub(t, 0.8), 0.2)));\n    }\n    function upACo(tIn, dIn, tOut, dOut, eFi, eFo) {\n        if (dIn < 0) {\n            dIn = 0;\n        }\n        if (dOut < 0) {\n            dOut = 0;\n        }\n        ac.fade = 1;\n        if (t < tOut) {\n            if (t < $bm_sum(tIn, dIn)) {\n                if (dIn == 0) {\n                    ac.fade = 0;\n                } else {\n                    ac.fade = $bm_div($bm_sub(t, tIn), dIn);\n                    if (ac.fade < 0) {\n                        ac.fade = 0;\n                    }\n                    if (ac.fade > 1) {\n                        ac.fade = 1;\n                    }\n                    if (eFi) {\n                        ac.fade = eFi(ac.fade);\n                    }\n                }\n            }\n        } else {\n            if (dOut == 0) {\n                ac.fade = 0;\n            } else {\n                ac.fade = $bm_div($bm_sub(t, tOut), dOut);\n                if (ac.fade < 0) {\n                    ac.fade = 0;\n                }\n                if (ac.fade > 1) {\n                    ac.fade = 1;\n                }\n                if (eFo) {\n                    ac.fade = eFo(ac.fade);\n                }\n                ac.fade = $bm_sub(1, ac.fade);\n            }\n        }\n        ac.intensity = 1;\n        ac.en = true;\n        ac.t = $bm_sub(t, tIn);\n    }\n    var ac = {};\n    ac.en = false;\n    var v = thisProperty.value;\n    var t = time;\n    var acAccM = 1;\n    ac.en = false;\n    if (tTrI !== null && t < tTrI) {\n        upACo(bL.inPoint, $bm_sub(tTrI, bL.inPoint), bL.outPoint, 0);\n        ac.fade = $bm_sub(1, ac.fade);\n    }\n    acPD('AC IN [YRH] Controls');\n    if (ac.en) {\n        acValMul($bm_sub(1, $bm_mul(mhOvershoot($bm_sub(1, ac.fade), 1, acSliderValP('AC IN [YRH] Controls', 'Number of bounces', 2), 7), $bm_sum($bm_div(acSliderValP('AC IN [YRH] Controls', 'Scale', 0), -100), 1))));\n    }\n    ac.en = false;\n    if (tTrO !== null && t >= tTrO) {\n        upACo(0, 0, tTrO, $bm_sub($bm_sub(bL.outPoint, tTrO), thisComp.frameDuration));\n        ac.fade = $bm_sub(1, ac.fade);\n    }\n    acPD('AC OUT [YRH] 2 Controls');\n    if (ac.en) {\n        acValMul($bm_sub(1, $bm_mul(mhOvershoot($bm_sub(1, ac.fade), 1, acSliderValP('AC OUT [YRH] 2 Controls', 'Number of bounces', 2), 7), $bm_sum($bm_div(acSliderValP('AC OUT [YRH] 2 Controls', 'Scale', 0), -100), 1))));\n    }\n    v = thisProperty.value;\n    v *= acAccM;\n    return v;\n}\n$bm_rt = result;"
+                }
+            },
+            "ao": 0,
+            "ef": [
+                {
+                    "ty": 5,
+                    "nm": "AC IN [YRH] Controls",
+                    "np": 4,
+                    "mn": "Pseudo/MHAC PrCtrl YRH 4",
+                    "ix": 1,
+                    "en": 1,
+                    "ef": [
+                        { "ty": 0, "nm": "Number of bounces", "mn": "Pseudo/MHAC PrCtrl YRH 4-0001", "ix": 1, "v": { "a": 0, "k": 2, "ix": 1 } },
+                        { "ty": 0, "nm": "Scale", "mn": "Pseudo/MHAC PrCtrl YRH 4-0002", "ix": 2, "v": { "a": 0, "k": 0, "ix": 2 } }
+                    ]
+                },
+                {
+                    "ty": 5,
+                    "nm": "AC OUT [YRH] 2 Controls",
+                    "np": 4,
+                    "mn": "Pseudo/MHAC PrCtrl YRH 4",
+                    "ix": 2,
+                    "en": 1,
+                    "ef": [
+                        { "ty": 0, "nm": "Number of bounces", "mn": "Pseudo/MHAC PrCtrl YRH 4-0001", "ix": 1, "v": { "a": 0, "k": 0, "ix": 1 } },
+                        { "ty": 0, "nm": "Scale", "mn": "Pseudo/MHAC PrCtrl YRH 4-0002", "ix": 2, "v": { "a": 0, "k": 0, "ix": 2 } }
+                    ]
+                }
+            ],
+            "ip": 13.0000005295009,
+            "op": 104.000004236007,
+            "st": 13.0000005295009,
+            "bm": 0
+        },
+        {
+            "ddd": 0,
+            "ind": 4,
+            "ty": 2,
+            "nm": "Layer 5",
+            "refId": "image_3",
+            "sr": 1,
+            "ks": {
+                "o": { "a": 0, "k": 100, "ix": 11 },
+                "r": { "a": 0, "k": 0, "ix": 10 },
+                "p": { "a": 0, "k": [833.006, 499.723, 0], "ix": 2, "l": 2 },
+                "a": { "a": 0, "k": [542.184, -89.354, 0], "ix": 1, "l": 2 },
+                "s": {
+                    "a": 0,
+                    "k": [100, 100, 100],
+                    "ix": 6,
+                    "l": 2,
+                    "x": "var $bm_rt;\nvar result;\nresult = getAnimationComposerPresetValue();\nfunction getAnimationComposerPresetValue() {\n    var bL = thisLayer;\n    var tTrI = null;\n    var tTrO = null;\n    if (bL.marker.numKeys > 0) {\n        var acmp = 'zzzzzzzzzzzzzzz_AC';\n        for (var i = 1; i <= bL.marker.numKeys; i++) {\n            var m = bL.marker.key(i);\n            var p = m.parameters;\n            if (p.hasOwnProperty(acmp + 'MarkerEnabled') && p.hasOwnProperty(acmp + 'MarkerType') && p.hasOwnProperty(acmp + 'MarkerAppPresetType')) {\n                if (p[acmp + 'MarkerEnabled'] != '1') {\n                    continue;\n                }\n                switch (p[acmp + 'MarkerAppPresetType']) {\n                case '1': {\n                        tTrI = m.time;\n                        break;\n                    }\n                case '2': {\n                        tTrO = m.time;\n                        break;\n                    }\n                }\n            }\n        }\n    }\n    ;\n    function acPD(fxN) {\n        try {\n            if (bL.effect(fxN).active === false) {\n                ac.en = false;\n            }\n        } catch (e) {\n        }\n    }\n    function acSliderValP(fxN, stN, dV) {\n        try {\n            return bL.effect(fxN)(stN);\n        } catch (e) {\n            return dV;\n        }\n    }\n    function acValMul(val) {\n        acAccM *= val;\n    }\n    function mhOvershoot(t, a, f, d) {\n        if (d <= 0) {\n            d = 0;\n        }\n        var y = $bm_div($bm_mul(a, Math.cos($bm_mul($bm_mul($bm_mul(t, f), Math.PI), 2))), Math.exp($bm_mul(t, d)));\n        if (t < 0.8) {\n            return y;\n        }\n        return $bm_mul(y, $bm_sub(1, $bm_div($bm_sub(t, 0.8), 0.2)));\n    }\n    function upACo(tIn, dIn, tOut, dOut, eFi, eFo) {\n        if (dIn < 0) {\n            dIn = 0;\n        }\n        if (dOut < 0) {\n            dOut = 0;\n        }\n        ac.fade = 1;\n        if (t < tOut) {\n            if (t < $bm_sum(tIn, dIn)) {\n                if (dIn == 0) {\n                    ac.fade = 0;\n                } else {\n                    ac.fade = $bm_div($bm_sub(t, tIn), dIn);\n                    if (ac.fade < 0) {\n                        ac.fade = 0;\n                    }\n                    if (ac.fade > 1) {\n                        ac.fade = 1;\n                    }\n                    if (eFi) {\n                        ac.fade = eFi(ac.fade);\n                    }\n                }\n            }\n        } else {\n            if (dOut == 0) {\n                ac.fade = 0;\n            } else {\n                ac.fade = $bm_div($bm_sub(t, tOut), dOut);\n                if (ac.fade < 0) {\n                    ac.fade = 0;\n                }\n                if (ac.fade > 1) {\n                    ac.fade = 1;\n                }\n                if (eFo) {\n                    ac.fade = eFo(ac.fade);\n                }\n                ac.fade = $bm_sub(1, ac.fade);\n            }\n        }\n        ac.intensity = 1;\n        ac.en = true;\n        ac.t = $bm_sub(t, tIn);\n    }\n    var ac = {};\n    ac.en = false;\n    var v = thisProperty.value;\n    var t = time;\n    var acAccM = 1;\n    ac.en = false;\n    if (tTrI !== null && t < tTrI) {\n        upACo(bL.inPoint, $bm_sub(tTrI, bL.inPoint), bL.outPoint, 0);\n        ac.fade = $bm_sub(1, ac.fade);\n    }\n    acPD('AC IN [YRH] Controls');\n    if (ac.en) {\n        acValMul($bm_sub(1, $bm_mul(mhOvershoot($bm_sub(1, ac.fade), 1, acSliderValP('AC IN [YRH] Controls', 'Number of bounces', 2), 7), $bm_sum($bm_div(acSliderValP('AC IN [YRH] Controls', 'Scale', 0), -100), 1))));\n    }\n    ac.en = false;\n    if (tTrO !== null && t >= tTrO) {\n        upACo(0, 0, tTrO, $bm_sub($bm_sub(bL.outPoint, tTrO), thisComp.frameDuration));\n        ac.fade = $bm_sub(1, ac.fade);\n    }\n    acPD('AC OUT [YRH] 2 Controls');\n    if (ac.en) {\n        acValMul($bm_sub(1, $bm_mul(mhOvershoot($bm_sub(1, ac.fade), 1, acSliderValP('AC OUT [YRH] 2 Controls', 'Number of bounces', 2), 7), $bm_sum($bm_div(acSliderValP('AC OUT [YRH] 2 Controls', 'Scale', 0), -100), 1))));\n    }\n    v = thisProperty.value;\n    v *= acAccM;\n    return v;\n}\n$bm_rt = result;"
+                }
+            },
+            "ao": 0,
+            "ef": [
+                {
+                    "ty": 5,
+                    "nm": "AC IN [YRH] Controls",
+                    "np": 4,
+                    "mn": "Pseudo/MHAC PrCtrl YRH 4",
+                    "ix": 1,
+                    "en": 1,
+                    "ef": [
+                        { "ty": 0, "nm": "Number of bounces", "mn": "Pseudo/MHAC PrCtrl YRH 4-0001", "ix": 1, "v": { "a": 0, "k": 2, "ix": 1 } },
+                        { "ty": 0, "nm": "Scale", "mn": "Pseudo/MHAC PrCtrl YRH 4-0002", "ix": 2, "v": { "a": 0, "k": 0, "ix": 2 } }
+                    ]
+                },
+                {
+                    "ty": 5,
+                    "nm": "AC OUT [YRH] 2 Controls",
+                    "np": 4,
+                    "mn": "Pseudo/MHAC PrCtrl YRH 4",
+                    "ix": 2,
+                    "en": 1,
+                    "ef": [
+                        { "ty": 0, "nm": "Number of bounces", "mn": "Pseudo/MHAC PrCtrl YRH 4-0001", "ix": 1, "v": { "a": 0, "k": 0, "ix": 1 } },
+                        { "ty": 0, "nm": "Scale", "mn": "Pseudo/MHAC PrCtrl YRH 4-0002", "ix": 2, "v": { "a": 0, "k": 0, "ix": 2 } }
+                    ]
+                }
+            ],
+            "ip": 13.0000005295009,
+            "op": 104.000004236007,
+            "st": 13.0000005295009,
+            "bm": 0
+        },
+        {
+            "ddd": 0,
+            "ind": 5,
+            "ty": 2,
+            "nm": "Layer 6",
+            "refId": "image_4",
+            "sr": 1,
+            "ks": {
+                "o": { "a": 0, "k": 100, "ix": 11 },
+                "r": { "a": 0, "k": 0, "ix": 10 },
+                "p": {
+                    "a": 1,
+                    "k": [
+                        { "i": { "x": 0.667, "y": 1 }, "o": { "x": 0.619, "y": 0 }, "t": 0, "s": [871.148, 1155.785, 0], "to": [0, -20.833, 0], "ti": [0, 20.833, 0] },
+                        { "i": { "x": 0.667, "y": 0.667 }, "o": { "x": 0.167, "y": 0.167 }, "t": 20, "s": [871.148, 1030.785, 0], "to": [0, 0, 0], "ti": [0, 0, 0] },
+                        { "i": { "x": 0.667, "y": 1 }, "o": { "x": 0.167, "y": 0 }, "t": 94, "s": [871.148, 1030.785, 0], "to": [0, 20.833, 0], "ti": [0, -20.833, 0] },
+                        { "t": 114.000004643315, "s": [871.148, 1155.785, 0] }
+                    ],
+                    "ix": 2,
+                    "l": 2
+                },
+                "a": { "a": 0, "k": [93.339, 80.489, 0], "ix": 1, "l": 2 },
+                "s": { "a": 0, "k": [100, 100, 100], "ix": 6, "l": 2 }
+            },
+            "ao": 0,
+            "ip": 0,
+            "op": 145.000005905971,
+            "st": 0,
+            "bm": 0
+        },
+        {
+            "ddd": 0,
+            "ind": 6,
+            "ty": 2,
+            "nm": "Layer 7",
+            "parent": 5,
+            "refId": "image_5",
+            "sr": 1,
+            "ks": {
+                "o": { "a": 0, "k": 100, "ix": 11 },
+                "r": {
+                    "a": 1,
+                    "k": [
+                        { "i": { "x": [0.667], "y": [1] }, "o": { "x": [0.624], "y": [0] }, "t": 0, "s": [-19] },
+                        { "i": { "x": [0.667], "y": [1] }, "o": { "x": [0.333], "y": [0] }, "t": 10, "s": [0] },
+                        { "i": { "x": [0.667], "y": [1] }, "o": { "x": [0.333], "y": [0] }, "t": 104, "s": [0] },
+                        { "t": 114.000004643315, "s": [-19] }
+                    ],
+                    "ix": 10
+                },
+                "p": { "a": 0, "k": [96.191, 49.704, 0], "ix": 2, "l": 2 },
+                "a": { "a": 0, "k": [106.16, 336.048, 0], "ix": 1, "l": 2 },
+                "s": { "a": 0, "k": [100, 100, 100], "ix": 6, "l": 2 }
+            },
+            "ao": 0,
+            "ip": 0,
+            "op": 145.000005905971,
+            "st": 0,
+            "bm": 0
+        },
+        { "ddd": 0, "ind": 7, "ty": 2, "nm": "Layer 15", "parent": 10, "td": 1, "refId": "image_6", "sr": 1, "ks": { "o": { "a": 0, "k": 100, "ix": 11 }, "r": { "a": 0, "k": 0, "ix": 10 }, "p": { "a": 0, "k": [213.989, 371.4, 0], "ix": 2, "l": 2 }, "a": { "a": 0, "k": [213.989, 371.4, 0], "ix": 1, "l": 2 }, "s": { "a": 0, "k": [100, 100, 100], "ix": 6, "l": 2 } }, "ao": 0, "ip": 0, "op": 145.000005905971, "st": 0, "bm": 0 },
+        { "ddd": 0, "ind": 8, "ty": 2, "nm": "Layer 16", "parent": 6, "tt": 1, "refId": "image_5", "sr": 1, "ks": { "o": { "a": 0, "k": 28, "ix": 11 }, "r": { "a": 0, "k": 0, "ix": 10 }, "p": { "a": 0, "k": [93.16, 355.048, 0], "ix": 2, "l": 2 }, "a": { "a": 0, "k": [106.16, 336.048, 0], "ix": 1, "l": 2 }, "s": { "a": 0, "k": [100, 100, 100], "ix": 6, "l": 2 } }, "ao": 0, "ip": 0, "op": 145.000005905971, "st": 0, "bm": 0 },
+        {
+            "ddd": 0,
+            "ind": 9,
+            "ty": 4,
+            "nm": "Shape Layer 1",
+            "td": 1,
+            "sr": 1,
+            "ks": { "o": { "a": 0, "k": 100, "ix": 11 }, "r": { "a": 0, "k": 0, "ix": 10 }, "p": { "a": 0, "k": [812, 612, 0], "ix": 2, "l": 2 }, "a": { "a": 0, "k": [0, 0, 0], "ix": 1, "l": 2 }, "s": { "a": 0, "k": [100, 100, 100], "ix": 6, "l": 2 } },
+            "ao": 0,
+            "shapes": [
+                {
+                    "ty": "gr",
+                    "it": [
+                        {
+                            "ind": 0,
+                            "ty": "sh",
+                            "ix": 1,
+                            "ks": {
+                                "a": 0,
+                                "k": {
+                                    "i": [
+                                        [0, 0],
+                                        [0, 0],
+                                        [0, 0],
+                                        [0, 0]
+                                    ],
+                                    "o": [
+                                        [0, 0],
+                                        [0, 0],
+                                        [0, 0],
+                                        [0, 0]
+                                    ],
+                                    "v": [
+                                        [167.5, -209],
+                                        [167.5, 61.5],
+                                        [-167.5, 61.5],
+                                        [-167.5, -209]
+                                    ],
+                                    "c": true
+                                },
+                                "ix": 2
+                            },
+                            "nm": "Path 1",
+                            "mn": "ADBE Vector Shape - Group",
+                            "hd": false
+                        },
+                        { "ty": "st", "c": { "a": 0, "k": [0.027465999828, 0.717651008157, 0.639221011891, 1], "ix": 3 }, "o": { "a": 0, "k": 100, "ix": 4 }, "w": { "a": 0, "k": 0, "ix": 5 }, "lc": 1, "lj": 1, "ml": 4, "bm": 0, "nm": "Stroke 1", "mn": "ADBE Vector Graphic - Stroke", "hd": false },
+                        { "ty": "fl", "c": { "a": 0, "k": [0.776458979588, 0.783752022538, 0.788239004098, 1], "ix": 4 }, "o": { "a": 0, "k": 100, "ix": 5 }, "r": 1, "bm": 0, "nm": "Fill 1", "mn": "ADBE Vector Graphic - Fill", "hd": false },
+                        { "ty": "tr", "p": { "a": 0, "k": [25, -145], "ix": 2 }, "a": { "a": 0, "k": [0, 0], "ix": 1 }, "s": { "a": 0, "k": [135.123, 100], "ix": 3 }, "r": { "a": 0, "k": 0, "ix": 6 }, "o": { "a": 0, "k": 100, "ix": 7 }, "sk": { "a": 0, "k": 0, "ix": 4 }, "sa": { "a": 0, "k": 0, "ix": 5 }, "nm": "Transform" }
+                    ],
+                    "nm": "Rectangle 1",
+                    "np": 3,
+                    "cix": 2,
+                    "bm": 0,
+                    "ix": 1,
+                    "mn": "ADBE Vector Group",
+                    "hd": false
+                }
+            ],
+            "ip": 0,
+            "op": 145.000005905971,
+            "st": 0,
+            "bm": 0
+        },
+        {
+            "ddd": 0,
+            "ind": 10,
+            "ty": 2,
+            "nm": "Layer 8",
+            "parent": 6,
+            "tt": 2,
+            "refId": "image_6",
+            "sr": 1,
+            "ks": {
+                "o": { "a": 0, "k": 100, "ix": 11 },
+                "r": {
+                    "a": 1,
+                    "k": [
+                        { "i": { "x": [0.408], "y": [1] }, "o": { "x": [0.333], "y": [0] }, "t": 0, "s": [-41] },
+                        { "i": { "x": [0.408], "y": [1] }, "o": { "x": [0.333], "y": [0] }, "t": 10, "s": [0] },
+                        { "i": { "x": [0.667], "y": [1] }, "o": { "x": [0.333], "y": [0] }, "t": 104, "s": [0] },
+                        { "t": 114.000004643315, "s": [-41] }
+                    ],
+                    "ix": 10
+                },
+                "p": { "a": 0, "k": [98.363, 95.45, 0], "ix": 2, "l": 2 },
+                "a": { "a": 0, "k": [213.989, 371.4, 0], "ix": 1, "l": 2 },
+                "s": { "a": 0, "k": [100, 100, 100], "ix": 6, "l": 2 }
+            },
+            "ao": 0,
+            "ip": 0,
+            "op": 145.000005905971,
+            "st": 0,
+            "bm": 0
+        },
+        { "ddd": 0, "ind": 11, "ty": 2, "nm": "Layer 9", "parent": 6, "refId": "image_7", "sr": 1, "ks": { "o": { "a": 0, "k": 100, "ix": 11 }, "r": { "a": 0, "k": 0, "ix": 10 }, "p": { "a": 0, "k": [119.346, 82.828, 0], "ix": 2, "l": 2 }, "a": { "a": 0, "k": [42.421, 35.794, 0], "ix": 1, "l": 2 }, "s": { "a": 0, "k": [100, 100, 100], "ix": 6, "l": 2 } }, "ao": 0, "ip": 0, "op": 145.000005905971, "st": 0, "bm": 0 },
+        { "ddd": 0, "ind": 12, "ty": 2, "nm": "Layer 18", "td": 1, "refId": "image_8", "sr": 1, "ks": { "o": { "a": 0, "k": 100, "ix": 11 }, "r": { "a": 0, "k": 0, "ix": 10 }, "p": { "a": 0, "k": [835.578, 654.041, 0], "ix": 2, "l": 2 }, "a": { "a": 0, "k": [338.481, 343.189, 0], "ix": 1, "l": 2 }, "s": { "a": 0, "k": [100, 100, 100], "ix": 6, "l": 2 } }, "ao": 0, "ip": 0, "op": 145.000005905971, "st": 0, "bm": 0 },
+        {
+            "ddd": 0,
+            "ind": 13,
+            "ty": 2,
+            "nm": "Layer 17",
+            "parent": 6,
+            "tt": 1,
+            "refId": "image_5",
+            "sr": 1,
+            "ks": { "o": { "a": 0, "k": 7, "ix": 11 }, "r": { "a": 0, "k": 0, "ix": 10 }, "p": { "a": 0, "k": [59.16, 352.048, 0], "ix": 2, "l": 2 }, "a": { "a": 0, "k": [106.16, 336.048, 0], "ix": 1, "l": 2 }, "s": { "a": 0, "k": [100, 100, 100], "ix": 6, "l": 2 } },
+            "ao": 0,
+            "ef": [
+                {
+                    "ty": 21,
+                    "nm": "Fill",
+                    "np": 9,
+                    "mn": "ADBE Fill",
+                    "ix": 1,
+                    "en": 1,
+                    "ef": [
+                        { "ty": 10, "nm": "Fill Mask", "mn": "ADBE Fill-0001", "ix": 1, "v": { "a": 0, "k": 0, "ix": 1 } },
+                        { "ty": 7, "nm": "All Masks", "mn": "ADBE Fill-0007", "ix": 2, "v": { "a": 0, "k": 0, "ix": 2 } },
+                        { "ty": 2, "nm": "Color", "mn": "ADBE Fill-0002", "ix": 3, "v": { "a": 0, "k": [0, 0, 0, 1], "ix": 3 } },
+                        { "ty": 7, "nm": "Invert", "mn": "ADBE Fill-0006", "ix": 4, "v": { "a": 0, "k": 0, "ix": 4 } },
+                        { "ty": 0, "nm": "Horizontal Feather", "mn": "ADBE Fill-0003", "ix": 5, "v": { "a": 0, "k": 0, "ix": 5 } },
+                        { "ty": 0, "nm": "Vertical Feather", "mn": "ADBE Fill-0004", "ix": 6, "v": { "a": 0, "k": 0, "ix": 6 } },
+                        { "ty": 0, "nm": "Opacity", "mn": "ADBE Fill-0005", "ix": 7, "v": { "a": 0, "k": 1, "ix": 7 } }
+                    ]
+                }
+            ],
+            "ip": 0,
+            "op": 145.000005905971,
+            "st": 0,
+            "bm": 0
+        },
+        { "ddd": 0, "ind": 14, "ty": 2, "nm": "Layer 10", "refId": "image_8", "sr": 1, "ks": { "o": { "a": 0, "k": 100, "ix": 11 }, "r": { "a": 0, "k": 0, "ix": 10 }, "p": { "a": 0, "k": [835.578, 654.041, 0], "ix": 2, "l": 2 }, "a": { "a": 0, "k": [338.481, 343.189, 0], "ix": 1, "l": 2 }, "s": { "a": 0, "k": [100, 100, 100], "ix": 6, "l": 2 } }, "ao": 0, "ip": 0, "op": 145.000005905971, "st": 0, "bm": 0 },
+        { "ddd": 0, "ind": 15, "ty": 2, "nm": "Layer 11", "refId": "image_9", "sr": 1, "ks": { "o": { "a": 0, "k": 100, "ix": 11 }, "r": { "a": 0, "k": 0, "ix": 10 }, "p": { "a": 0, "k": [732.391, 765.782, 0], "ix": 2, "l": 2 }, "a": { "a": 0, "k": [139.025, 231.269, 0], "ix": 1, "l": 2 }, "s": { "a": 0, "k": [100, 100, 100], "ix": 6, "l": 2 } }, "ao": 0, "ip": 0, "op": 145.000005905971, "st": 0, "bm": 0 },
+        { "ddd": 0, "ind": 16, "ty": 2, "nm": "Layer 12", "refId": "image_10", "sr": 1, "ks": { "o": { "a": 0, "k": 100, "ix": 11 }, "r": { "a": 0, "k": 0, "ix": 10 }, "p": { "a": 0, "k": [786.977, 839.564, 0], "ix": 2, "l": 2 }, "a": { "a": 0, "k": [57.428, 61.932, 0], "ix": 1, "l": 2 }, "s": { "a": 0, "k": [100, 100, 100], "ix": 6, "l": 2 } }, "ao": 0, "ip": 0, "op": 145.000005905971, "st": 0, "bm": 0 }
+    ],
+    "markers": []
+}
